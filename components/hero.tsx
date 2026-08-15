@@ -49,15 +49,15 @@ export function Hero() {
     restDelta: 0.001,
   });
 
-  const clipRight = useTransform(smoothProgress, [0, 0.75], [100, 0]);
+  const clipRight = useTransform(smoothProgress, [0, 0.55], [100, 0]);
   const clipPath = useTransform(clipRight, (v) => `inset(0 ${v}% 0 0)`);
   const imageY = useTransform(smoothProgress, [0, 1], [0, -60]);
-  const imageScale = useTransform(smoothProgress, [0, 0.75], [1, 1.06]);
-  const dividerLeft = useTransform(smoothProgress, [0, 0.75], [0, 100]);
+  const imageScale = useTransform(smoothProgress, [0, 0.55], [1, 1.06]);
+  const dividerLeft = useTransform(smoothProgress, [0, 0.55], [0, 100]);
   const dividerLeftPx = useTransform(dividerLeft, (v) => `${v}%`);
   const textY = useTransform(smoothProgress, [0, 1], [0, -30]);
-  const beforeLabelOpacity = useTransform(smoothProgress, [0, 0.15, 0.4], [1, 0.6, 0]);
-  const afterLabelOpacity = useTransform(smoothProgress, [0.3, 0.75], [0, 1]);
+  const beforeLabelOpacity = useTransform(smoothProgress, [0, 0.15, 0.3], [1, 0.6, 0]);
+  const afterLabelOpacity = useTransform(smoothProgress, [0.2, 0.55], [0, 1]);
 
   return (
     <section
