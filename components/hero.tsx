@@ -53,7 +53,7 @@ export function Hero() {
   const clipPath = useTransform(clipRight, (v) => `inset(0 ${v}% 0 0)`);
   const imageY = useTransform(smoothProgress, [0, 1], [0, -60]);
   const imageScale = useTransform(smoothProgress, [0, 0.75], [1, 1.06]);
-  const dividerLeft = useTransform(smoothProgress, [0, 0.5], [0, 100]);
+  const dividerLeft = useTransform(smoothProgress, [0, 0.75], [50, 100]);
   const dividerLeftPx = useTransform(dividerLeft, (v) => `${v}%`);
   const textY = useTransform(smoothProgress, [0, 1], [0, -30]);
   const beforeLabelOpacity = useTransform(smoothProgress, [0, 0.15, 0.4], [1, 0.6, 0]);
