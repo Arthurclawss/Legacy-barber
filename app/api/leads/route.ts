@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     }
 
     // Insert into Supabase
+    const supabase = getSupabaseClient();
     const { data, error } = await supabase
       .from('leads')
       .insert([
