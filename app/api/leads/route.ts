@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Supabase error:', error);
       return NextResponse.json(
-        { error: 'Failed to save lead to database.' },
+        { error: 'Failed to save lead to database.', details: error },
         { status: 500 }
       );
     }
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Server error:', error);
     return NextResponse.json(
-      { error: 'Internal server error.' },
+      { error: 'Internal server error.', details: (error as Error).message },
       { status: 500 }
     );
   }

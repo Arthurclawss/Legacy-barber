@@ -45,7 +45,9 @@ export function PremiumModal({ isOpen, onClose }: PremiumModalProps) {
           setIsClient("nao");
         }, 3000);
       } else {
-        alert("Ocorreu um erro ao enviar seus dados. Tente novamente.");
+        const errorData = await response.json();
+        const errorMessage = errorData.details?.message || errorData.details || errorData.error || "Ocorreu um erro desconhecido.";
+        alert(`Erro do Supabase: ${errorMessage}`);
       }
     } catch (error) {
       console.error(error);
