@@ -46,6 +46,7 @@ export function Testimonials() {
 
   return (
     <section
+      id="depoimentos"
       className="relative py-20 lg:py-40 bg-legacy-charcoal"
       aria-labelledby="testimonials-heading"
     >

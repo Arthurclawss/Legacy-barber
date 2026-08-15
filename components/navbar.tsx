@@ -9,7 +9,7 @@ import { BookingModal } from "@/components/booking-modal";
 const NAV_LINKS = [
   { label: "SERVIÇOS", href: "#servicos" },
   { label: "EXPERIÊNCIA", href: "#experiencia" },
-  { label: "GALERIA", href: "#galeria" },
+  { label: "DEPOIMENTOS", href: "#depoimentos" },
   { label: "CONTATO", href: "#contato" },
 ];
 
