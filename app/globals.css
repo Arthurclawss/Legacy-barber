@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   LEGACY BARBER — Design System
+   ═══════════════════════════════════════════ */
+
+:root {
+  --legacy-black: #0a0a0a;
+  --legacy-charcoal: #141414;
+  --legacy-dark: #1a1a1a;
+  --legacy-gray: #2a2a2a;
+  --legacy-silver: #8a8a8a;
+  --legacy-light: #c4c4c4;
+  --legacy-white: #f5f5f0;
+  --legacy-warm: #c4a87c;
+  --legacy-warm-light: #d4bc96;
+
+  --background: var(--legacy-black);
+  --foreground: var(--legacy-white);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-legacy-black: var(--legacy-black);
+  --color-legacy-charcoal: var(--legacy-charcoal);
+  --color-legacy-dark: var(--legacy-dark);
+  --color-legacy-gray: var(--legacy-gray);
+  --color-legacy-silver: var(--legacy-silver);
+  --color-legacy-light: var(--legacy-light);
+  --color-legacy-white: var(--legacy-white);
+  --color-legacy-warm: var(--legacy-warm);
+  --color-legacy-warm-light: var(--legacy-warm-light);
+  --font-heading: var(--font-bebas-neue);
+  --font-body: var(--font-inter);
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scrolling */
+}
+
+body {
+  background: var(--legacy-black);
+  color: var(--legacy-white);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--legacy-warm);
+  color: var(--legacy-black);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--legacy-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--legacy-gray);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--legacy-silver);
+}
+
+/* ─── Focus ─── */
+*:focus-visible {
+  outline: 2px solid var(--legacy-warm);
+  outline-offset: 2px;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Typography Utilities ─── */
+.heading-display {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+
+.heading-section {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.text-body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.text-label {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}
+
+/* ─── Container ─── */
+.container-legacy {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-legacy {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-legacy {
+    padding: 0 4rem;
+  }
+}
+
+/* ─── Divider ─── */
+.divider-warm {
+  width: 40px;
+  height: 2px;
+  background: var(--legacy-warm);
+}
